@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyy.dao.IndexMapper">
+    <resultMap type="com.cyy.domain.Plan" id="planMap">
+        <id property="id" column="id" />
+        <result property="invest" column="invest" />
+        <result property="deposit" column="deposit" />
+        <result property="eduFund" column="edu_fund" />
+        <result property="cash" column="cash" />
+        <result property="createDate" column="create_date" />
+    </resultMap>
+
+    <select id="getPlanList" resultMap="planMap">
+        select * from plan order by create_date asc
+    </select>
+
+    <select id="getTotal" resultType="com.cyy.model.Total">
+        select sum(invest) as invest, sum(deposit) as deposit, sum(edu_fund) as eduFund, 0 as sum from plan
+    </select>
+
+    <insert id="addPlan" parameterType="com.cyy.domain.Plan">
+        insert into plan (invest, deposit, edu_fund, cash, create_date)
+        values (#{invest}, #{deposit}, #{eduFund}, #{cash}, #{createDate})
+    </insert>
+
+</mapper>
