@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/fm")
+@RequestMapping("/plan")
 public class PlanController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class PlanController {
      * @param limit
      * @return
      */
-    @GetMapping("/plan")
+    @GetMapping
     public TableResult getPlanList(int page, int limit) {
         List<Plan> planList = planService.getPlanList();
         TableResult result = new TableResult();
@@ -47,7 +47,7 @@ public class PlanController {
      * @param plan
      * @return
      */
-    @PostMapping("/add-plan")
+    @PostMapping
     public boolean addPlan(@RequestBody Plan plan) {
         return planService.addPlan(plan);
     }

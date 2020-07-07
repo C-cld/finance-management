@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/fm")
+@RequestMapping("/real-record")
 public class RealRecordController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class RealRecordController {
      * @param realRecord
      * @return
      */
-    @PostMapping("/update-real-record")
+    @PostMapping
     public boolean updateRealRecord(@RequestBody RealRecord realRecord) {
         return realRecordService.updateRealRecord(realRecord);
     }
