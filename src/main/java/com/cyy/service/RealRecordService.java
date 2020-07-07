@@ -7,11 +7,18 @@ import com.cyy.model.Total;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RealRecordService {
 
     @Autowired
     RealRecordMapper realRecordMapper;
+
+    public List<RealRecord> getRealRecordList(int type) {
+        List<RealRecord> realRecordList = realRecordMapper.getRealRecordList(type);
+        return realRecordList;
+    }
 
     public Total getRealTocal() {
         Total total = new Total();
