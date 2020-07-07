@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cyy.dao.IndexMapper">
+<mapper namespace="com.cyy.dao.PlanMapper">
     <resultMap type="com.cyy.domain.Plan" id="planMap">
         <id property="id" column="id" />
         <result property="invest" column="invest" />
@@ -21,11 +21,6 @@
     <insert id="addPlan" parameterType="com.cyy.domain.Plan">
         insert into plan (invest, deposit, edu_fund, cash, create_date)
         values (#{invest}, #{deposit}, #{eduFund}, #{cash}, #{createDate})
-    </insert>
-
-    <insert id="updateRealRecord" parameterType="com.cyy.domain.RealRecord">
-        insert into real_record (type, value, note, create_time)
-        values (#{type}, #{value}, #{note}, #{createTime})
     </insert>
 
 </mapper>

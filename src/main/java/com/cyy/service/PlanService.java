@@ -1,6 +1,6 @@
 package com.cyy.service;
 
-import com.cyy.dao.IndexMapper;
+import com.cyy.dao.PlanMapper;
 import com.cyy.domain.Plan;
 import com.cyy.model.Total;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,20 +9,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IndexService {
+public class PlanService {
     @Autowired
-    IndexMapper indexMapper;
+    PlanMapper planMapper;
     public List<Plan> getPlanList() {
-        return indexMapper.getPlanList();
+        return planMapper.getPlanList();
     }
 
     public Total getTotal() {
-        return indexMapper.getTotal();
+        return planMapper.getTotal();
     }
 
     public boolean addPlan(Plan plan) {
         try {
-            indexMapper.addPlan(plan);
+            planMapper.addPlan(plan);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
