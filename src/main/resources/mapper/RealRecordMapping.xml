@@ -15,7 +15,7 @@
     </insert>
 
     <select id="getRealRecordByType" resultType="java.lang.Float">
-        select sum(value) from real_record where type = #{type}
+        select IFNULL(sum(value),0) from real_record where type = #{type}
     </select>
 
     <select id="getRealRecordList" resultMap="realRecordMap">
