@@ -28,7 +28,7 @@ public class RealRecordController {
         return result;
     }
 
-    @GetMapping("/real-total")
+    @GetMapping("/total")
     public Total getRealTocal() {
         return realRecordService.getRealTocal();
     }
