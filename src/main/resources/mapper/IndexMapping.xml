@@ -23,4 +23,9 @@
         values (#{invest}, #{deposit}, #{eduFund}, #{cash}, #{createDate})
     </insert>
 
+    <insert id="updateRealRecord" parameterType="com.cyy.domain.RealRecord">
+        insert into real_record (type, value, note, create_time)
+        values (#{type}, #{value}, #{note}, #{createTime})
+    </insert>
+
 </mapper>

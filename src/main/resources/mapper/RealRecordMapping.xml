@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyy.dao.RealRecordMapper">
+    <resultMap type="com.cyy.domain.RealRecord" id="realRecordMap">
+
+    </resultMap>
+
+    <insert id="updateRealRecord" parameterType="com.cyy.domain.RealRecord">
+        insert into real_record (type, value, note, create_time)
+        values (#{type}, #{value}, #{note}, #{createTime})
+    </insert>
+
+    <select id="getRealRecordByType" resultType="java.lang.Float">
+        select sun(value) from real_record where type = #{type}
+    </select>
+
+</mapper>

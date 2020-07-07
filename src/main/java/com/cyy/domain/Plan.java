@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+/**
+ * 每月规划
+ */
 @Data
 public class Plan {
     private Integer id;

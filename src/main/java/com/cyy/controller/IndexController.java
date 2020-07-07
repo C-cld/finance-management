@@ -16,6 +16,12 @@ public class IndexController {
     @Autowired
     IndexService indexService;
 
+    /**
+     * 规划列表
+     * @param page
+     * @param limit
+     * @return
+     */
     @GetMapping("/plan")
     public TableResult getPlanList(int page, int limit) {
         List<Plan> planList = indexService.getPlanList();
@@ -27,11 +33,20 @@ public class IndexController {
         return result;
     }
 
+    /**
+     * 获取各类规划总额
+     * @return
+     */
     @GetMapping("/total")
     public Total getTotal() {
         return indexService.getTotal();
     }
 
+    /**
+     * 添加规划
+     * @param plan
+     * @return
+     */
     @PostMapping("/add-plan")
     public boolean addPlan(@RequestBody Plan plan) {
         return indexService.addPlan(plan);
